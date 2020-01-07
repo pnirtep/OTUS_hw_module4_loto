@@ -1,14 +1,13 @@
 from loto_game.models import Card,  Bag
 
 '''
-проверка конструктора
+Проверяем то, что карточка создается с уникальным набором чисел
 '''
 
 def test_card():
-    assert Card('Карточка')
-
-def test_bag():
-    assert Bag()
+    card = Card('Карточка')
+    s = set(card.nums)
+    assert len(s) == len(card.nums)
 
 
 '''
